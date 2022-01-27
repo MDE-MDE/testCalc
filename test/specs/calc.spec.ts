@@ -1,3 +1,4 @@
+import { ButtonCalculator } from "../pages/buttonCalculator"
 import { HomePage } from "../pages/home.page"
 import { OpenPage } from "../pages/open.page"
 import { SearchPage } from "../pages/search.page"
@@ -5,6 +6,7 @@ import { SearchPage } from "../pages/search.page"
 const Open = new OpenPage()
 const Home = new HomePage()
 const Search = new SearchPage()
+const BtnCalc = new ButtonCalculator()
 
 describe('Вычисление в онлайн калькуляторе', function(){
     it('Открытие главной страницы Google',async () => {
@@ -23,17 +25,12 @@ describe('Вычисление в онлайн калькуляторе', functi
         console.log('!!!: ' + await Search.resultsSearch.getText())
     })
 
-    it('Вставить выражение " 1 * 2 - 3 + 1 "', async () => {
-        await Search.resultCalc.setValue(1 * 2 - 3 + 1)
-        console.log('!!!: ' + Search.resultCalc.getText())
+    it('Вставить выражение " 1 * 2 - 3 + 1 " и вычислить', async () => {
+        await BtnCalc.print(' 1 * 2 - 3 + 1 ')
         await Search.clickEqualButton()
     })
 
-    xit('', async () => {
-
-    })
-
-    xit('', async () => {
-
+    it('Скриншот результата вычисления', async () => {
+        await browser.saveScreenshot('resulCalculator.png')
     })
 })

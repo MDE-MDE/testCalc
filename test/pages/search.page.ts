@@ -8,7 +8,7 @@ export class SearchPage {
     }
 
     get resultCalc(){
-        return $('[jsname="zLiRgc"]')
+        return $('#cwos')
     }
 
     get equalButton(){
@@ -18,4 +18,9 @@ export class SearchPage {
     async clickEqualButton(){
         await this.equalButton.click()
     }
+
+    get btnCalc(){
+        return $('.ElumCf').$$('.PaQdxb')
+    }
+
 }
