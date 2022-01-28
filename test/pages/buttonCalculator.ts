@@ -11,6 +11,7 @@ export class ButtonCalculator extends SearchPage {
             for(let j = 0; j < await this.btnCalc.length; j++){
                 if (x[i] == await this.btnCalc[j].getText()){
                     await this.btnCalc[j].click()
+                    break
                 }
             }
         }
